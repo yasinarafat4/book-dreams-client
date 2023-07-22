@@ -130,6 +130,11 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
+            <img
+                  title= "User"
+                  className="rounded-full w-7 h-7 md:w-10 md:h-10 border md:border-2 border-gray-600"
+                  src="https://picsum.photos/200/300"
+                />
             {isMenuOpen ? (
               <IoMdClose
                 onClick={onToggleMenu}
