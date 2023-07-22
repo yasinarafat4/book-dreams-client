@@ -53,16 +53,16 @@ const Navbar = () => {
           isNavbarVisible ? "lg:translate-y-0" : "lg:translate-y-0"
         }`}
       >
-        <div className="flex justify-between items-center px-3 py-2 md:px-8 md:py-4 bg-white dark:bg-slate-700">
+        <div className="flex justify-between items-center px-3 py-2 md:px-8 md:py-4 bg-white bg-gradient-to-r from-pink-100 to-sky-100 dark:from-slate-700 dark:to-slate-700">
           <Link to="/">
             <div>
               <img src={logo} className="w-40 lg:w-48" alt="Logo" />
             </div>
           </Link>
           <div
-            className={`absolute lg:static bg-white dark:bg-slate-700 dark:text-white min-h-[45vh] lg:min-h-fit left-0 ${
+            className={`absolute lg:static bg-[#f3ebed] dark:bg-slate-700 dark:text-white min-h-[45vh] lg:min-h-fit left-0 ${
               isMenuOpen ? "top-[16%] md:top-[18%]" : "top-[-100%]"
-            } w-full lg:w-auto flex items-center px-5 duration-700 z-10 shadow-lg lg:shadow-none`}
+            } z-20 w-full lg:w-auto flex items-center px-5 duration-700 shadow-lg lg:shadow-none`}
           >
             <div className="flex lg:flex-row flex-col lg:items-center gap-[3vw] lg:gap-[2vw] xl:gap-[3vw] text-lg">
               <NavLink
@@ -132,7 +132,7 @@ const Navbar = () => {
             </Link>
             <img
                   title= "User"
-                  className="rounded-full w-7 h-7 md:w-10 md:h-10 border md:border-2 border-gray-600"
+                  className="rounded-full w-7 h-7 md:w-10 md:h-10 border md:border-2 border-gray-600 cursor-pointer"
                   src="https://picsum.photos/200/300"
                 />
             {isMenuOpen ? (
