@@ -56,12 +56,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center px-3 py-2 md:px-8 md:py-4 bg-white dark:bg-slate-700">
           <Link to="/">
             <div>
-              <img src={logo} className="w-28 lg:w-36" alt="Logo" />
+              <img src={logo} className="w-40 lg:w-48" alt="Logo" />
             </div>
           </Link>
           <div
-            className={`absolute lg:static bg-white dark:bg-slate-700 dark:text-white min-h-[60vh] lg:min-h-fit left-0 ${
-              isMenuOpen ? "top-[19%] md:top-[22%]" : "top-[-100%]"
+            className={`absolute lg:static bg-white dark:bg-slate-700 dark:text-white min-h-[45vh] lg:min-h-fit left-0 ${
+              isMenuOpen ? "top-[16%] md:top-[18%]" : "top-[-100%]"
             } w-full lg:w-auto flex items-center px-5 duration-700 z-10 shadow-lg lg:shadow-none`}
           >
             <div className="flex lg:flex-row flex-col lg:items-center gap-[3vw] lg:gap-[2vw] xl:gap-[3vw] text-lg">
@@ -113,7 +113,7 @@ const Navbar = () => {
                 <div className="text-xl" onClick={handleThemeSwitch}>
                   <BsSun
                     title="Make Light"
-                    className="text-xl md:text-2xl cursor-pointer"
+                    className="text-xl md:text-2xl dark:text-white cursor-pointer"
                   />
                 </div>
               ) : (
@@ -126,19 +126,19 @@ const Navbar = () => {
               )}
             </div>
             <Link to="/login">
-              <button className="bg-[#38B6FF] hover:bg-[#e84766] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-full">
+              <button className="bg-[#0C8ED8] hover:bg-[#e84766] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-full">
                 Login
               </button>
             </Link>
             {isMenuOpen ? (
               <IoMdClose
                 onClick={onToggleMenu}
-                className="text-xl md:text-2xl cursor-pointer lg:hidden"
+                className="text-xl md:text-2xl dark:text-white cursor-pointer lg:hidden"
               />
             ) : (
               <FiMenu
                 onClick={onToggleMenu}
-                className="text-xl md:text-2xl cursor-pointer lg:hidden"
+                className="text-xl md:text-2xl dark:text-white cursor-pointer lg:hidden"
               />
             )}
           </div>
