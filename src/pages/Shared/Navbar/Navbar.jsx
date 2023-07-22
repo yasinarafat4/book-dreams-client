@@ -61,7 +61,7 @@ const Navbar = () => {
           </Link>
           <div
             className={`absolute lg:static bg-[#f3ebed] dark:bg-slate-700 dark:text-white min-h-[45vh] lg:min-h-fit left-0 ${
-              isMenuOpen ? "top-[16%] md:top-[18%]" : "top-[-100%]"
+              isMenuOpen ? "top-[16%] md:top-[19%]" : "top-[-100%]"
             } z-20 w-full lg:w-auto flex items-center px-5 duration-700 shadow-lg lg:shadow-none`}
           >
             <div className="flex lg:flex-row flex-col lg:items-center gap-[3vw] lg:gap-[2vw] xl:gap-[3vw] text-lg">
@@ -76,7 +76,7 @@ const Navbar = () => {
                 </p>
               </NavLink>
               <NavLink
-                to="/products"
+                to="/colleges"
                 className={({ isActive }) =>
                   isActive ? "text-[#e84766]" : "text-slate-700 dark:text-white"
                 }
@@ -86,7 +86,7 @@ const Navbar = () => {
                 </p>
               </NavLink>
               <NavLink
-                to="/dashboard"
+                to="/admission"
                 className={({ isActive }) =>
                   isActive ? "text-[#e84766]" : "text-slate-700 dark:text-white"
                 }
@@ -96,7 +96,7 @@ const Navbar = () => {
                 </p>
               </NavLink>
               <NavLink
-                to="/cart"
+                to="/myCollege"
                 className={({ isActive }) =>
                   isActive ? "text-[#e84766]" : "text-slate-700 dark:text-white"
                 }
