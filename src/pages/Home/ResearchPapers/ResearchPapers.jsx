@@ -26,7 +26,7 @@ const ResearchPapers = () => {
   return (
     <>
       <SectionTitle heading={"Research Papers"}></SectionTitle>
-      <div className="py-12 bg-gray-100 dark:bg-slate-700">
+      <div className="pb-12 bg-gray-100 dark:bg-slate-700">
         <div className="container mx-auto">
           <div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"

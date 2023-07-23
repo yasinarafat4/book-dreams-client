@@ -15,7 +15,7 @@ const CollegeGallery = () => {
   return (
     <>
       <SectionTitle heading={"Take A Look"}></SectionTitle>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-20 bg-gray-100 p-6">
       {images.map((image, index) => (
         <div
           key={index}
