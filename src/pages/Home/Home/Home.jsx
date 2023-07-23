@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Banner from "../Banner/Banner";
 import CollegeGallery from "../CollegeGallery/CollegeGallery";
+import CounterOverview from "../CounterOverview/CounterOverview";
 import PopularColleges from "../PopularColleges/PopularColleges";
 import ResearchPapers from "../ResearchPapers/ResearchPapers";
 import Reviews from "../Reviews/Reviews";
@@ -17,6 +18,7 @@ const Home = () => {
       <CollegeGallery></CollegeGallery>
       <ResearchPapers></ResearchPapers>
       <Reviews></Reviews>
+      <CounterOverview></CounterOverview>
     </div>
   );
 };
