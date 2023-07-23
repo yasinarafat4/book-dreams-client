@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
 import Rating from "react-rating";
-import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const CollegeCard = ({ college }) => {
   const {
@@ -15,6 +17,30 @@ const CollegeCard = ({ college }) => {
     research_count,
     sports,
   } = college;
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  const handleDetails = () => {
+    if (user) {
+      navigate("/details", { state: { from: location } });
+    } else {
+      Swal.fire({
+        title: "Please login",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#0C8ED8",
+        cancelButtonColor: "#e84766",
+        confirmButtonText: "Login Now",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login", { state: { from: location } });
+        }
+      });
+    }
+  };
+
   return (
     <div
       className="m-4 md:w-9/12 shadow-lg p-4 mx-auto cursor-pointer"
@@ -68,11 +94,14 @@ const CollegeCard = ({ college }) => {
           <p>
             <span className="font-medium">Admission:</span> {admission_date}
           </p>
-          <Link to="/details">
-            <button className="bg-[#e84766] hover:bg-[#bd1133] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-sm">
-              Details
-            </button>
-          </Link>
+
+         <button
+            onClick={handleDetails}
+            className="bg-[#e84766] hover:bg-[#bd1133] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-sm"
+          >
+            Details
+          </button>
+         
         </div>
       </div>
     </div>

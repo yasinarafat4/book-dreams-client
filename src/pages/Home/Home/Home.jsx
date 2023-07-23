@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../../providers/AuthProvider";
+import Spinner from "../../Shared/Spinner/Spinner";
 import Banner from "../Banner/Banner";
 import CollegeGallery from "../CollegeGallery/CollegeGallery";
 import CounterOverview from "../CounterOverview/CounterOverview";
@@ -9,6 +11,10 @@ import ResearchPapers from "../ResearchPapers/ResearchPapers";
 import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
+const {loading} = useContext(AuthContext)
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
   return (
     <div className="lg:pt-28">
       <Helmet>

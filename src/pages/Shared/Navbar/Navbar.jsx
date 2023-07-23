@@ -146,7 +146,10 @@ const Navbar = () => {
                     className="btn btn-ghost btn-circle avatar"
                   >
                     <div title="User" className="w-8 md:w-10 rounded-full">
-                      <img src="https://picsum.photos/200/300" />
+                      <img
+                        title={user?.displayName || "User"}
+                        src={user.photoURL || "https://picsum.photos/200/300"}
+                      />
                     </div>
                   </label>
                   <ul
@@ -163,7 +166,10 @@ const Navbar = () => {
                     </Link>
                     <Link to="/">
                       <li>
-                        <a onClick={handleLogOut} className="justify-start text-base font-medium">
+                        <a
+                          onClick={handleLogOut}
+                          className="justify-start text-base font-medium"
+                        >
                           <TbLogout className="text-xl" />
                           Logout
                         </a>
