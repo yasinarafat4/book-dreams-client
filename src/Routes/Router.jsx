@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Admission from "../pages/Admission/Admission";
+import CollegeDetails from "../pages/CollegeDetails/CollegeDetails";
 import Colleges from "../pages/Colleges/Colleges";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home/Home";
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile></Profile>,
+      },
+      {
+        path: "/details",
+        element: <CollegeDetails></CollegeDetails>,
       },
     ],
   },

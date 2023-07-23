@@ -3,6 +3,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const CollegeCard = ({ college }) => {
   const {
@@ -15,13 +16,12 @@ const CollegeCard = ({ college }) => {
     sports,
   } = college;
   return (
-    <div className="m-4 md:w-9/12 shadow-lg p-4 mx-auto cursor-pointer" data-aos="fade-right"
-    data-aos-duration="800">
-      <img
-        className="w-full rounded-md mx-auto mb-3"
-        src={image}
-        alt=""
-      />
+    <div
+      className="m-4 md:w-9/12 shadow-lg p-4 mx-auto cursor-pointer"
+      data-aos="fade-right"
+      data-aos-duration="800"
+    >
+      <img className="w-full rounded-md mx-auto mb-3" src={image} alt="" />
       <div className="space-y-5 md:space-y-3">
         <h2 className="font-medium text-xl text-center">{name}</h2>
         <div className="flex justify-around items-center">
@@ -66,12 +66,13 @@ const CollegeCard = ({ college }) => {
         </div>
         <div className="flex justify-between items-center">
           <p>
-            <span className="font-medium">Admission:</span>{" "}
-            {admission_date}
+            <span className="font-medium">Admission:</span> {admission_date}
           </p>
-          <button className="bg-[#e84766] hover:bg-[#bd1133] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-sm">
-            Details
-          </button>
+          <Link to="/details">
+            <button className="bg-[#e84766] hover:bg-[#bd1133] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-sm">
+              Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>
