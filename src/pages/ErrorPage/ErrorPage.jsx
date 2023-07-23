@@ -25,7 +25,7 @@ const ErrorPage = () => {
         </p>
         <div className="flex justify-center mt-4">
         <Link to="/">
-              <button className="bg-[#fc597a] hover:bg-[#e84766] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-full">
+              <button className="bg-[#e84766] hover:bg-[#bd1133] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-full">
                 Back to Home
               </button>
             </Link>

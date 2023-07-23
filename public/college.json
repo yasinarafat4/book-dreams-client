@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "college_image": "https://i.ibb.co/gwsSnLc/abc-college.png",
     "college_name": "ABC College",
     "events": ["Freshers' Party", "Annual Fest", "Tech Symposium"],
@@ -8,10 +8,10 @@
     "admission_date": "2023-08-15",
     "research_count": 120,
     "sports": ["Football", "Basketball", "Swimming"],
-    "category": "popular"
+    "category": "regular"
   },
   {
-    "id": 2,
+    "_id": 2,
     "college_image": "https://i.ibb.co/MDJ29K7/moonlight-college.png",
     "college_name": "Moonlight College",
     "events": ["Cultural Night", "Sports Meet", "Tech Expo"],
@@ -19,10 +19,10 @@
     "admission_date": "2023-09-01",
     "research_count": 80,
     "sports": ["Cricket", "Volleyball", "Badminton"],
-    "category": "regular"
+    "category": "popular"
   },
   {
-    "id": 3,
+    "_id": 3,
     "college_image": "https://i.ibb.co/g4L8PpQ/pqr-institute.png",
     "college_name": "PQR Institute of Technology",
     "events": ["Tech Fest", "Annual Day", "Science Exhibition"],
@@ -33,7 +33,7 @@
     "category": "popular"
   },
   {
-    "id": 4,
+    "_id": 4,
     "college_image": "https://i.ibb.co/b7FS9wv/lmn-college.png",
     "college_name": "LMN College of Arts",
     "events": ["Art Expo", "Literary Festival", "Cultural Showcase"],
@@ -44,7 +44,7 @@
     "category": "popular"
   },
   {
-    "id": 5,
+    "_id": 5,
     "college_image": "https://i.ibb.co/MMG4r5q/efg-sports-academy.png",
     "college_name": "EFG Sports Academy",
     "events": [
@@ -59,14 +59,14 @@
     "category": "regular"
   },
   {
-    "id": 6,
-    "college_image": "https://i.ibb.co/sQBr61W/mno-research-institute.png",
+    "_id": 6,
+    "college_image": "https://i.ibb.co/sQBr61W/mno-institute.png",
     "college_name": "MNO Research Institute",
     "events": ["Science Symposium", "Research Expo", "Innovation Summit"],
     "college_rating": 4.6,
     "admission_date": "2023-09-10",
     "research_count": 200,
     "sports": ["Hockey", "Cycling", "Shooting"],
-    "category": "popular"
+    "category": "regular"
   }
 ]
