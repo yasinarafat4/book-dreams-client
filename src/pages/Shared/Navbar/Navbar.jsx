@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BsMoonStars, BsSun } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { FiMenu } from "react-icons/fi";
@@ -6,12 +6,21 @@ import { IoMdClose } from "react-icons/io";
 import { TbLogout } from "react-icons/tb";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [theme, setTheme] = useState("light");
   const [isNavbarVisible, setNavbarVisible] = useState(true);
+  const { user, logOut } = useContext(AuthContext);
+
+  // Logout functionality
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
   // Menu toggle functionality
   const onToggleMenu = () => {
@@ -127,39 +136,52 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-            <Link to="/login">
-              <button className="bg-[#0C8ED8] hover:bg-[#e84766] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-full">
-                Login
-              </button>
-            </Link>
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div title="User" className="w-8 md:w-10 rounded-full">
-                  <img src="https://picsum.photos/200/300" />
+
+            {user ? (
+              <>
+                {" "}
+                <div className="dropdown dropdown-end">
+                  <label
+                    tabIndex={0}
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div title="User" className="w-8 md:w-10 rounded-full">
+                      <img src="https://picsum.photos/200/300" />
+                    </div>
+                  </label>
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-gradient-to-r from-pink-200 to-sky-200 dark:from-slate-700 dark:to-slate-700"
+                  >
+                    <Link to="/profile">
+                      <li>
+                        <a className="justify-start text-base font-medium">
+                          <CgProfile className="text-lg" />
+                          Profile
+                        </a>
+                      </li>
+                    </Link>
+                    <Link to="/">
+                      <li>
+                        <a onClick={handleLogOut} className="justify-start text-base font-medium">
+                          <TbLogout className="text-xl" />
+                          Logout
+                        </a>
+                      </li>
+                    </Link>
+                  </ul>
                 </div>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-gradient-to-r from-pink-200 to-sky-200 dark:from-slate-700 dark:to-slate-700"
-              >
-                <Link to="/profile">
-                  <li>
-                    <a className="justify-start text-base font-medium">
-                      <CgProfile className="text-lg" />
-                      Profile
-                    </a>
-                  </li>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <button className="bg-[#0C8ED8] hover:bg-[#e84766] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-full">
+                    Login
+                  </button>
                 </Link>
-                <Link to="/">
-                  <li>
-                    <a className="justify-start text-base font-medium">
-                      <TbLogout className="text-xl" />
-                      Logout
-                    </a>
-                  </li>
-                </Link>
-              </ul>
-            </div>
+              </>
+            )}
+
             {isMenuOpen ? (
               <IoMdClose
                 onClick={onToggleMenu}
