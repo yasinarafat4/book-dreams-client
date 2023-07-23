@@ -18,7 +18,7 @@ const CounterOverview = () => {
           </div>
           <div>
             <h2 className="text-4xl  xl:text-5xl font-semibold">
-            <CountUp start={0} end={inView ? 200000 : 0} duration={1.5} separator="," />
+            <CountUp start={0} end={inView ? 200187 : 0} duration={1.5} separator="," />
             </h2>
             <p className="text-xl xl:text-2xl font-base">Students Enrolled</p>
           </div>

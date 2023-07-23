@@ -122,7 +122,7 @@ const Footer = () => {
           </div>
         </div>
         <div className=" place-self-center justify-self-center">
-          <p>Copyright © {moment().format("YYYY")} - All Rights Reserved.</p>
+          <p>Copyright © {moment().format("YYYY")} - All Rights Reserved by Md. Yasin Arafat.</p>
         </div>
       </footer>{" "}
     </div>

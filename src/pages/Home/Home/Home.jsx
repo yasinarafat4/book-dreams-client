@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Banner from "../Banner/Banner";
 import CollegeGallery from "../CollegeGallery/CollegeGallery";
 import CounterOverview from "../CounterOverview/CounterOverview";
+import OurColleges from "../OurColleges/OurColleges";
 import PopularColleges from "../PopularColleges/PopularColleges";
 import ResearchPapers from "../ResearchPapers/ResearchPapers";
 import Reviews from "../Reviews/Reviews";
@@ -19,6 +20,7 @@ const Home = () => {
       <ResearchPapers></ResearchPapers>
       <Reviews></Reviews>
       <CounterOverview></CounterOverview>
+      <OurColleges></OurColleges>
     </div>
   );
 };
