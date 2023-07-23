@@ -1,0 +1,23 @@
+[
+  {
+    "_id": 1,
+    "name": "John Doe",
+    "image": "https://i.ibb.co/GR47hH1/john-doe.png",
+    "review": "I had a great experience at ABC College. The professors were knowledgeable and supportive, and the campus environment was vibrant.",
+    "rating": 5
+  },
+  {
+    "_id": 2,
+    "name": "Sara Islam",
+    "image": "https://i.ibb.co/djCqNmJ/sara-islam.png",
+    "review": "PQR Institute provided me with excellent opportunities to explore my interests and pursue my passion. I highly recommend it!",
+    "rating": 4.5
+  },
+  {
+    "_id": 3,
+    "name": "Michael Johnson",
+    "image": "https://i.ibb.co/MGWJNcJ/michael-johnson.png",
+    "review": "I had a wonderful time at PQR Institute of Technology. The faculty members were top-notch, and the campus facilities were impressive.",
+    "rating": 4
+  }
+]

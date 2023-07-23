@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import CollegeGallery from "../CollegeGallery/CollegeGallery";
 import PopularColleges from "../PopularColleges/PopularColleges";
 import ResearchPapers from "../ResearchPapers/ResearchPapers";
+import Reviews from "../Reviews/Reviews";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <PopularColleges></PopularColleges>
       <CollegeGallery></CollegeGallery>
       <ResearchPapers></ResearchPapers>
+      <Reviews></Reviews>
     </div>
   );
 };

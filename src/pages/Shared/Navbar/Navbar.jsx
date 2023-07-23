@@ -144,16 +144,16 @@ const Navbar = () => {
               >
                 <Link to="/profile">
                   <li>
-                    <a className="justify-start">
-                      <CgProfile />
+                    <a className="justify-start text-base font-medium">
+                      <CgProfile className="text-lg" />
                       Profile
                     </a>
                   </li>
                 </Link>
                 <Link to="/">
                   <li>
-                    <a className="justify-start">
-                      <TbLogout />
+                    <a className="justify-start text-base font-medium">
+                      <TbLogout className="text-xl" />
                       Logout
                     </a>
                   </li>
