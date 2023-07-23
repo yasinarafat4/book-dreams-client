@@ -1,12 +1,60 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import logo from "../../assets/images/logo.png";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+  const { signIn } = useContext(AuthContext);
+
+  const handleLogin = (event) => {
+    setError("");
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+    signIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          title: "Great!!!",
+          text: "You have logged in successfully!",
+          icon: "success",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        if (error.code === "auth/user-not-found") {
+          setError("User Not Found. Invalid email or password!");
+        } else if (error.code === "auth/wrong-password") {
+          setError("Wrong Password. Please try again!");
+        } else {
+          setError(error.message);
+        }
+      });
+  };
+
+
+
+  // Show password and eye icon toggle
   const togglePasswordVisibility = () => {
     setShowPassword((visible) => !visible);
   };
@@ -18,7 +66,7 @@ const Login = () => {
       </Helmet>
 
       <div className="card-body w-11/12 md:w-6/12 lg:w-5/12 xl:w-4/12 border 2xl:w-3/12 rounded-xl shadow-xl mx-auto">
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="flex justify-between items-center">
             <Link to="/">
               <img src={logo} className="w-28 lg:w-40" alt="Logo" />
@@ -78,7 +126,7 @@ const Login = () => {
             </div>
           </div>
 
-          {/* <p className="text-red-600 text-sm m-1 font-semibold">{error}</p> */}
+          <p className="text-red-600 text-sm m-1 font-semibold">{error}</p>
           <div className="form-control mt-6">
             <input
               type="submit"

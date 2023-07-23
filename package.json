@@ -29,6 +29,7 @@
     "react-toastify": "^9.1.3",
     "react-wavify": "^1.8.3",
     "sort-by": "^1.2.0",
+    "sweetalert2": "^11.7.20",
     "typewriter-effect": "^2.20.1"
   },
   "devDependencies": {
