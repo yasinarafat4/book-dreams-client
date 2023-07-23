@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "college_image": "https://i.ibb.co/gwsSnLc/abc-college.png",
+    "college_name": "ABC College",
+    "events": ["Freshers' Party", "Annual Fest", "Tech Symposium"],
+    "college_rating": 4.5,
+    "admission_date": "2023-08-15",
+    "research_count": 120,
+    "sports": ["Football", "Basketball", "Swimming"],
+    "category": "popular"
+  },
+  {
+    "id": 2,
+    "college_image": "https://i.ibb.co/MDJ29K7/moonlight-college.png",
+    "college_name": "Moonlight College",
+    "events": ["Cultural Night", "Sports Meet", "Tech Expo"],
+    "college_rating": 4.2,
+    "admission_date": "2023-09-01",
+    "research_count": 80,
+    "sports": ["Cricket", "Volleyball", "Badminton"],
+    "category": "regular"
+  },
+  {
+    "id": 3,
+    "college_image": "https://i.ibb.co/g4L8PpQ/pqr-institute.png",
+    "college_name": "PQR Institute of Technology",
+    "events": ["Tech Fest", "Annual Day", "Science Exhibition"],
+    "college_rating": 4.8,
+    "admission_date": "2023-07-30",
+    "research_count": 150,
+    "sports": ["Tennis", "Table Tennis", "Athletics"],
+    "category": "popular"
+  },
+  {
+    "id": 4,
+    "college_image": "https://i.ibb.co/b7FS9wv/lmn-college.png",
+    "college_name": "LMN College of Arts",
+    "events": ["Art Expo", "Literary Festival", "Cultural Showcase"],
+    "college_rating": 4.0,
+    "admission_date": "2023-08-20",
+    "research_count": 50,
+    "sports": ["Chess", "Yoga", "Karate"],
+    "category": "popular"
+  },
+  {
+    "id": 5,
+    "college_image": "https://i.ibb.co/MMG4r5q/efg-sports-academy.png",
+    "college_name": "EFG Sports Academy",
+    "events": [
+      "Inter-School Sports Meet",
+      "Fitness Challenge",
+      "Athletics Championship"
+    ],
+    "college_rating": 4.9,
+    "admission_date": "2023-07-25",
+    "research_count": 10,
+    "sports": ["Soccer", "Gymnastics", "Boxing"],
+    "category": "regular"
+  },
+  {
+    "id": 6,
+    "college_image": "https://i.ibb.co/sQBr61W/mno-research-institute.png",
+    "college_name": "MNO Research Institute",
+    "events": ["Science Symposium", "Research Expo", "Innovation Summit"],
+    "college_rating": 4.6,
+    "admission_date": "2023-09-10",
+    "research_count": 200,
+    "sports": ["Hockey", "Cycling", "Shooting"],
+    "category": "popular"
+  }
+]

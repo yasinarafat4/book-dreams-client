@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { BsMoonStars, BsSun } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
+import { TbLogout } from "react-icons/tb";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/images/logo.png";
 
@@ -82,7 +84,7 @@ const Navbar = () => {
                 }
               >
                 <p className="hover:text-[#e84766] font-medium hover:duration-500">
-                Colleges
+                  Colleges
                 </p>
               </NavLink>
               <NavLink
@@ -92,7 +94,7 @@ const Navbar = () => {
                 }
               >
                 <p className="hover:text-[#e84766] font-medium hover:duration-500">
-                Admission
+                  Admission
                 </p>
               </NavLink>
               <NavLink
@@ -130,11 +132,34 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-            <img
-                  title= "User"
-                  className="rounded-full w-7 h-7 md:w-10 md:h-10 border md:border-2 border-gray-600 cursor-pointer"
-                  src="https://picsum.photos/200/300"
-                />
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div title="User" className="w-8 md:w-10 rounded-full">
+                  <img src="https://picsum.photos/200/300" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 bg-gradient-to-r from-pink-200 to-sky-200 dark:from-slate-700 dark:to-slate-700"
+              >
+                <Link to="/profile">
+                  <li>
+                    <a className="justify-start">
+                      <CgProfile />
+                      Profile
+                    </a>
+                  </li>
+                </Link>
+                <Link to="/">
+                  <li>
+                    <a className="justify-start">
+                      <TbLogout />
+                      Logout
+                    </a>
+                  </li>
+                </Link>
+              </ul>
+            </div>
             {isMenuOpen ? (
               <IoMdClose
                 onClick={onToggleMenu}
