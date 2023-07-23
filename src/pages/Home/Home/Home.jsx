@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Banner from "../Banner/Banner";
 import CollegeGallery from "../CollegeGallery/CollegeGallery";
 import PopularColleges from "../PopularColleges/PopularColleges";
+import ResearchPapers from "../ResearchPapers/ResearchPapers";
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
       <Banner></Banner>
       <PopularColleges></PopularColleges>
       <CollegeGallery></CollegeGallery>
-      {/* <ResearchPapers></ResearchPapers> */}
+      <ResearchPapers></ResearchPapers>
     </div>
   );
 };
