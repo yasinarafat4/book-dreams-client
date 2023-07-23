@@ -6,23 +6,24 @@ import Rating from "react-rating";
 
 const CollegeCard = ({ college }) => {
   const {
-    college_image,
-    college_name,
+    image,
+    name,
     events,
-    college_rating,
+    rating,
     admission_date,
     research_count,
     sports,
   } = college;
   return (
-    <div className="m-4 md:w-9/12 shadow-lg p-4 mx-auto cursor-pointer">
+    <div className="m-4 md:w-9/12 shadow-lg p-4 mx-auto cursor-pointer" data-aos="fade-right"
+    data-aos-duration="800">
       <img
         className="w-full rounded-md mx-auto mb-3"
-        src={college_image}
+        src={image}
         alt=""
       />
       <div className="space-y-5 md:space-y-3">
-        <h2 className="font-medium text-xl text-center">{college_name}</h2>
+        <h2 className="font-medium text-xl text-center">{name}</h2>
         <div className="flex justify-around items-center">
           <div>
             <p className="font-medium">Events:</p>
@@ -54,13 +55,13 @@ const CollegeCard = ({ college }) => {
           </p>
           <div className="flex gap-2">
             <Rating
-              placeholderRating={college_rating}
+              placeholderRating={rating}
               emptySymbol={<FaRegStar className="text-yellow-400"></FaRegStar>}
               readonly
               placeholderSymbol={<FaStar className="text-yellow-400"></FaStar>}
               fullSymbol={<FaStar></FaStar>}
             />
-            <p className="font-medium">{college_rating}</p>
+            <p className="font-medium">{rating}</p>
           </div>
         </div>
         <div className="flex justify-between items-center">

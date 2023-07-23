@@ -1,72 +1,78 @@
 [
   {
     "_id": 1,
-    "college_image": "https://i.ibb.co/gwsSnLc/abc-college.png",
-    "college_name": "ABC College",
+    "image": "https://i.ibb.co/gwsSnLc/abc-college.png",
+    "name": "ABC College",
     "events": ["Freshers' Party", "Annual Fest", "Tech Symposium"],
-    "college_rating": 4.5,
+    "sports": ["Football", "Basketball", "Swimming"],
+    "details": "Join us for exciting events like Freshers' Party, Annual Fest, Tech Symposium, and explore our top-notch sports facilities for Football, Basketball, and Swimming.",
+    "rating": 4.5,
     "admission_date": "2023-08-15",
     "research_count": 120,
-    "sports": ["Football", "Basketball", "Swimming"],
-    "category": "regular"
+    "category": "Regular"
   },
   {
     "_id": 2,
-    "college_image": "https://i.ibb.co/MDJ29K7/moonlight-college.png",
-    "college_name": "Moonlight College",
+    "image": "https://i.ibb.co/MDJ29K7/moonlight-college.png",
+    "name": "Moonlight College",
     "events": ["Cultural Night", "Sports Meet", "Tech Expo"],
-    "college_rating": 4.2,
+    "sports": ["Cricket", "Volleyball", "Badminton"],
+    "details": "Step into the world of Moonlight College, where creativity and innovation illuminate the path to success. Join us in this extraordinary journey. Experience cultural extravaganza with events like Cultural Night, Sports Meet, Tech Expo, and engage in sports activities like Cricket, Volleyball, and Badminton at top-notch facilities.",
+    "rating": 5,
     "admission_date": "2023-09-01",
     "research_count": 80,
-    "sports": ["Cricket", "Volleyball", "Badminton"],
-    "category": "popular"
+    "category": "Popular"
   },
   {
     "_id": 3,
-    "college_image": "https://i.ibb.co/g4L8PpQ/pqr-institute.png",
-    "college_name": "PQR Institute of Technology",
+    "image": "https://i.ibb.co/g4L8PpQ/pqr-institute.png",
+    "name": "PQR Institute of Technology",
     "events": ["Tech Fest", "Annual Day", "Science Exhibition"],
-    "college_rating": 4.8,
+    "sports": ["Tennis", "Table Tennis", "Athletics"],
+    "details": "Welcome to PQR Institute of Technology, where innovation and excellence in technology go hand in hand. Unleash your potential with us. Fuel your curiosity with Tech Fest, Annual Day, Science Exhibition events, and achieve sporting excellence with facilities for Tennis, Table Tennis, and Athletics.",
+    "rating": 4.8,
     "admission_date": "2023-07-30",
     "research_count": 150,
-    "sports": ["Tennis", "Table Tennis", "Athletics"],
-    "category": "popular"
+    "category": "Popular"
   },
   {
     "_id": 4,
-    "college_image": "https://i.ibb.co/b7FS9wv/lmn-college.png",
-    "college_name": "LMN College of Arts",
+    "image": "https://i.ibb.co/b7FS9wv/lmn-college.png",
+    "name": "LMN College of Arts",
     "events": ["Art Expo", "Literary Festival", "Cultural Showcase"],
-    "college_rating": 4.0,
+    "sports": ["Chess", "Yoga", "Karate"],
+    "details": "Discover the world of art and creativity at LMN College of Arts. Our nurturing environment will inspire you to create masterpieces. Unleash your creativity through Art Expo, Literary Festival, Cultural Showcase events, and discover balance with Chess, Yoga, Karate facilities for a healthy lifestyle.",
+    "rating": 4.5,
     "admission_date": "2023-08-20",
     "research_count": 50,
-    "sports": ["Chess", "Yoga", "Karate"],
-    "category": "popular"
+    "category": "Popular"
   },
   {
     "_id": 5,
-    "college_image": "https://i.ibb.co/MMG4r5q/efg-sports-academy.png",
-    "college_name": "EFG Sports Academy",
+    "image": "https://i.ibb.co/MMG4r5q/efg-sports-academy.png",
+    "name": "EFG Sports Academy",
     "events": [
       "Inter-School Sports Meet",
       "Fitness Challenge",
       "Athletics Championship"
     ],
-    "college_rating": 4.9,
+    "sports": ["Soccer", "Gymnastics", "Boxing"],
+    "details": "Welcome to EFG Sports Academy, where champions are nurtured. Train with the best and unleash your full athletic potential. Ignite your competitive spirit with Inter-School Sports Meet, Fitness Challenge, Athletics Championship, and train like a champion with Soccer, Gymnastics, Boxing facilities.",
+    "rating": 4.9,
     "admission_date": "2023-07-25",
     "research_count": 10,
-    "sports": ["Soccer", "Gymnastics", "Boxing"],
-    "category": "regular"
+    "category": "Regular"
   },
   {
     "_id": 6,
-    "college_image": "https://i.ibb.co/sQBr61W/mno-institute.png",
-    "college_name": "MNO Research Institute",
+    "image": "https://i.ibb.co/sQBr61W/mno-institute.png",
+    "name": "MNO Research Institute",
     "events": ["Science Symposium", "Research Expo", "Innovation Summit"],
-    "college_rating": 4.6,
+    "sports": ["Hockey", "Cycling", "Shooting"],
+    "details": "Welcome to MNO Research Institute, a hub of innovation and research. Join us to make groundbreaking discoveries and change the world. Shape the future with Science Symposium, Research Expo, Innovation Summit events, and excel in sports through Hockey, Cycling, Shooting facilities.",
+    "rating": 4.6,
     "admission_date": "2023-09-10",
     "research_count": 200,
-    "sports": ["Hockey", "Cycling", "Shooting"],
-    "category": "regular"
+    "category": "Regular"
   }
 ]

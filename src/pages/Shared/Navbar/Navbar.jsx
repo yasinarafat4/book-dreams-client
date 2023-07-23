@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <>
       <div
-        className={`lg:fixed lg:w-full lg:transition-transform duration-300 z-10 shadow-lg ${
+        className={`lg:fixed lg:w-full lg:transition-transform duration-300 z-20 shadow-lg ${
           isNavbarVisible ? "lg:translate-y-0" : "lg:translate-y-0"
         }`}
       >
