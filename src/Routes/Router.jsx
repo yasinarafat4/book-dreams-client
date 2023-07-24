@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Admission from "../pages/Admission/Admission";
+import AdmissionForm from "../pages/AdmissionForm/AdmissionForm";
 import CollegeDetails from "../pages/CollegeDetails/CollegeDetails";
 import Colleges from "../pages/Colleges/Colleges";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
@@ -56,6 +57,12 @@ export const router = createBrowserRouter([
             <CollegeDetails></CollegeDetails>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/college/${params.id}`),
+      },
+      {
+        path: "/admissionForm/:id",
+        element: <AdmissionForm></AdmissionForm>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/college/${params.id}`),
       },
