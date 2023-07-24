@@ -12,7 +12,7 @@ const PopularColleges = () => {
   const popular = colleges.filter((college) => college.category === "Popular");
 
   useEffect(() => {
-    fetch("http://localhost:5000/college")
+    fetch("https://book-dreams-server.vercel.app/college")
       .then((res) => res.json())
       .then((data) => {
         setColleges(data);
@@ -21,7 +21,7 @@ const PopularColleges = () => {
 
   // For Search
   const handleSearch = () => {
-    fetch(`http://localhost:5000/searchCollege/${searchText}`)
+    fetch(`https://book-dreams-server.vercel.app/searchCollege/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         setSearchResults(data);

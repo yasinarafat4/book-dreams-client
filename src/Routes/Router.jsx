@@ -58,13 +58,13 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/college/${params.id}`),
+          fetch(`https://book-dreams-server.vercel.app/college/${params.id}`),
       },
       {
         path: "/admissionForm/:id",
         element: <AdmissionForm></AdmissionForm>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/college/${params.id}`),
+          fetch(`https://book-dreams-server.vercel.app/college/${params.id}`),
       },
     ],
   },
