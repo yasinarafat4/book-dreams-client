@@ -50,8 +50,14 @@ export const router = createBrowserRouter([
         element: <Profile></Profile>,
       },
       {
-        path: "/details",
-        element: <CollegeDetails></CollegeDetails>,
+        path: "/details/:id",
+        element: (
+          <PrivateRoute>
+            <CollegeDetails></CollegeDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/college/${params.id}`),
       },
     ],
   },

@@ -3,12 +3,13 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 
 import Rating from "react-rating";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const CollegeCard = ({ college }) => {
   const {
+    _id,
     image,
     name,
     events,
@@ -19,12 +20,10 @@ const CollegeCard = ({ college }) => {
   } = college;
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
 
   const handleDetails = () => {
     if (user) {
-      navigate("/details");
+      navigate(`/details/${_id}`);
     } else {
       Swal.fire({
         title: "Please login",
@@ -33,10 +32,9 @@ const CollegeCard = ({ college }) => {
         confirmButtonColor: "#0C8ED8",
         cancelButtonColor: "#e84766",
         confirmButtonText: "Login Now",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/login", { state: { from: location } });
-        }
+      }).then(() => {
+        navigate("/login");
+        navigate(`/details/${_id}`);
       });
     }
   };
@@ -95,13 +93,12 @@ const CollegeCard = ({ college }) => {
             <span className="font-medium">Admission:</span> {admission_date}
           </p>
 
-         <button
+          <button
             onClick={handleDetails}
             className="bg-[#e84766] hover:bg-[#bd1133] text-white px-3 py-1 text-sm md:text-base md:px-5 md:py-2 duration-500 rounded-sm"
           >
             Details
           </button>
-         
         </div>
       </div>
     </div>
