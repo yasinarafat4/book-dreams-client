@@ -24,7 +24,7 @@ const CollegeCard = ({ college }) => {
 
   const handleDetails = () => {
     if (user) {
-      navigate("/details", { state: { from: location } });
+      navigate("/details");
     } else {
       Swal.fire({
         title: "Please login",

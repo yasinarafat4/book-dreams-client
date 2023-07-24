@@ -3,12 +3,13 @@ import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import logo from "../../assets/images/logo.png";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Registration = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -22,6 +23,16 @@ const Registration = () => {
     createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      updateUserProfile(data.name, data.photoURL).then(()=>{
+        console.log('User Profile updated');
+        reset()
+        Swal.fire(
+          "Good job!",
+          "You have successfully signed up!",
+          "success"
+        );
+        navigate("/");
+      })
     });
   };
 
@@ -94,7 +105,7 @@ const Registration = () => {
                   <span className="text-red-700 font-semibold">
                     Email is required!
                   </span>
-                )}
+                )} 
                 {errors.email.type === "pattern" && (
                   <span className="text-red-700 font-semibold">
                     You must provide a valid email!

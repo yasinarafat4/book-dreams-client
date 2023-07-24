@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { app } from "../firebase/firebase.config";
@@ -51,6 +52,36 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+   // Update user profile
+   const updateUserProfile = (name, photo) => {
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    });
+  };
+
+// // Update user profile
+// const updateUserProfile = async (name, photo, university, address) => {
+//   try {
+//     const user = auth.currentUser;
+
+//     // Step 1: Update (displayName and photoURL) using updateProfile
+//     await updateProfile(user, {
+//       displayName: name,
+//       photoURL: photo,
+//     });
+
+//     // custom properties (university and address) using updateUser
+//     await updateUser(user.uid, {
+//       university: university,
+//       address: address,
+//     });
+//   } catch (error) {
+//     console.error("Error updating profile:", error);
+//   }
+// };
+
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -70,6 +101,7 @@ const AuthProvider = ({ children }) => {
     logOut,
     googleSignIn,
     githubSignIn,
+    updateUserProfile,
   };
 
   return (
