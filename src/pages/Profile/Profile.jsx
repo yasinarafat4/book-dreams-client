@@ -27,7 +27,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="pt-4 lg:pt-36">
+    <div className="py-24 lg:py-36 2xl:py-80 bg-gradient-to-r from-pink-100 to-sky-100 dark:from-slate-700 dark:to-slate-700">
       <img src={user?.photoURL} alt="User Photo" className="w-32 h-32 rounded-full mx-auto" />
       <h2 className="text-2xl font-semibold text-center mt-4">{user?.displayName}</h2>
       <p className="text-center text-gray-500 dark:text-white"><span className="font-semibold">Email:</span> {user?.email}</p>

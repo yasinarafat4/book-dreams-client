@@ -1,7 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import logo from "../../assets/images/logo.png";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
@@ -10,11 +11,12 @@ import { AuthContext } from "../../providers/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const emailRef = useRef();
   const navigate = useNavigate();
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
-  const { signIn } = useContext(AuthContext);
+  const { signIn, resetPassword } = useContext(AuthContext);
 
   const handleLogin = (event) => {
     setError("");
@@ -33,7 +35,7 @@ const Login = () => {
           icon: "success",
           showClass: {
             popup: "animate__animated animate__fadeInDown",
-          }, 
+          },
           hideClass: {
             popup: "animate__animated animate__fadeOutUp",
           },
@@ -52,13 +54,29 @@ const Login = () => {
       });
   };
 
-
-
   // Show password and eye icon toggle
   const togglePasswordVisibility = () => {
     setShowPassword((visible) => !visible);
   };
- 
+
+  // Reset password handler
+  const handleResetPassword = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    if (!email) {
+      toast.error("Please provide your email!");
+      return;
+    }
+    resetPassword(email)
+      .then(() => {
+        toast.info("Please check your email address!");
+      })
+      .catch((error) => {
+        console.error("Error sending password reset email:", error);
+        setError(error.message);
+      });
+  };
+
   return (
     <div className="py-14">
       <Helmet>
@@ -83,7 +101,7 @@ const Login = () => {
 
           {/* Social Login*/}
           <SocialLogin text={"Or Sign In with"}></SocialLogin>
-          
+
           {/* Email Field */}
           <div className="form-control">
             <label className="label">
@@ -94,6 +112,7 @@ const Login = () => {
             <input
               type="email"
               name="email"
+              ref={emailRef}
               placeholder="Type here"
               className="input border-2 border-gray-400 focus:border-[#e84766]"
               required
@@ -125,7 +144,18 @@ const Login = () => {
               )}
             </div>
           </div>
-
+          <p>
+            <small>
+              Forget Password? Please{" "}
+              <button
+                title="Reset Password"
+                onClick={handleResetPassword}
+                className="text-base text-[#0C8ED8] underline"
+              >
+                Reset
+              </button>
+            </small>
+          </p>
           <p className="text-red-600 text-sm m-1 font-semibold">{error}</p>
           <div className="form-control mt-6">
             <input

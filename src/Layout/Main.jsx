@@ -6,13 +6,10 @@ import Footer from "../pages/Shared/Footer/Footer";
 import Navbar from "../pages/Shared/Navbar/Navbar";
 
 const Main = () => {
-
   const location = useLocation();
   const noHeaderFooter =
     location.pathname.includes("login") ||
     location.pathname.includes("register");
-
- 
 
   return (
     <div className="bg-white dark:bg-slate-700 dark:text-white">
@@ -21,7 +18,14 @@ const Main = () => {
         <Outlet></Outlet>
       </div>
       {noHeaderFooter || <Footer></Footer>}
-      <ToastContainer />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        closeOnClick
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <BackToTop></BackToTop>
     </div>
   );

@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <div>
       {/* Wave Animation Here*/}
-      <div className="dark:hidden">
+      <div className="dark:hidden bg-gradient-to-r from-pink-100 to-sky-100 dark:from-slate-700 dark:to-slate-700">
         <Wave
           fill="#90cdf4"
           paused={false}
