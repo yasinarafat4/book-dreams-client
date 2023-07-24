@@ -1,7 +1,6 @@
 import Lottie from "lottie-react";
 import React from "react";
-import { MdSearch } from "react-icons/md";
-import { RiArrowRightLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
 import Book from "../../../assets/book.json";
 
@@ -27,33 +26,24 @@ const Banner = () => {
           <p className="text-2xl md:text-4xl xl:text-5xl 2xl:text-7xl w-11/12 md:w-6/12 lg:w-8/12 2xl:w-6/12 tracking-wide font-bold">
             Engaging & Accessible College Booking Services.
           </p>
-          <div className="mt-4 flex justify-center items-center">
-            <button className="text-2xl text-[#e84766] -mr-10 z-10">
-              <MdSearch />
-            </button>
-            <input
-              type="text"
-              placeholder="Search College..."
-              className="w-full py-4 pl-12 border-2 border-1 focus:border-[#e84766] rounded-full focus:outline-none"
-            />
-            <button className="-ml-14 p-3 bg-[#e84766] hover:bg-[#c51b3d] text-white duration-700 text-2xl rounded-full">
-              <RiArrowRightLine />
-            </button>
+
+          <div className="flex items-center gap-2">
+            <Link to="/admission">
+              <button className="btn btn-md btn-outline text-[#0C8ED8] hover:bg-[#0C8ED8] duration-700 normal-case">
+                Admission
+              </button>
+            </Link>
+            <Link to="/colleges">
+              <button className="btn btn-md bg-[#e84766] hover:bg-[#db264a] text-white duration-700 normal-case">
+                View Colleges
+              </button>
+            </Link>
           </div>
         </div>
-        
+
         {/* Lottie Animation */}
         <div className="w-full md:w-7/12 mt-4 lg:w-96 mx-auto">
           <Lottie animationData={Book} loop={true} />
-        </div>
-      </div>
-      <div className="bg-white">
-        <div>
-          <img src="" alt="" />
-          <div>
-            <h2></h2>
-            <p></p>
-          </div>
         </div>
       </div>
     </>

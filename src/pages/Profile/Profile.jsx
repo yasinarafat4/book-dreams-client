@@ -30,7 +30,7 @@ const Profile = () => {
     <div className="py-24 lg:py-36 2xl:py-80 bg-gradient-to-r from-pink-100 to-sky-100 dark:from-slate-700 dark:to-slate-700">
       <img src={user?.photoURL} alt="User Photo" className="w-32 h-32 rounded-full mx-auto" />
       <h2 className="text-2xl font-semibold text-center mt-4">{user?.displayName}</h2>
-      <p className="text-center text-gray-500 dark:text-white"><span className="font-semibold">Email:</span> {user?.email}</p>
+      <p className="text-center text-gray-500 dark:text-white"><span className="font-semibold">Email:</span> {user?.email || 'Personal🔒'}</p>
       <p className="text-center mt-2"><span className="font-semibold">Address:</span> {user?.address || "Dhaka, Bangladesh"}</p>
       <p className="text-center"><span className="font-semibold">University:</span>  {user?.university || "ABC University"}</p>
       <div className="mt-4 text-center">

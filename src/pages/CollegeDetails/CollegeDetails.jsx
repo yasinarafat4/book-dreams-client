@@ -19,8 +19,8 @@ const CollegeDetails = () => {
       <Helmet>
         <title>BDreams | Details</title>
       </Helmet>
-      <div className="bg-gradient-to-r from-pink-100 to-sky-100 dark:from-slate-700 dark:to-slate-700">
-        <h2 className="text-center text-3xl md:text-4xl font-bold py-10 px-4 text-[#2E5879]">
+      <div className="bg-gradient-to-r from-pink-100 to-sky-100 dark:from-slate-700 dark:to-slate-700 dark:text-slate-300">
+        <h2 className="text-center text-3xl md:text-4xl font-bold py-10 px-4 text-[#2E5879] dark:text-slate-300">
           {name}
         </h2>
         <div className="grid grid-cols lg:grid-cols-2 2xl:grid-cols-1">
