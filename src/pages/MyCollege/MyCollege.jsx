@@ -5,7 +5,7 @@ import TabularCollegeInfo from "../../components/TabularCollegeInfo/TabularColle
 const MyCollege = () => {
   const [studentInfo, setStudentInfo] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/student")
+    fetch("https://book-dreams-server.vercel.app/student")
       .then((res) => res.json())
       .then((result) => {
         setStudentInfo(result);
