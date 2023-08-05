@@ -11,7 +11,7 @@ const AdmissionForm = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://book-dreams-server.vercel.app/student", {
+    fetch("http://localhost:5000/student", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -126,7 +126,7 @@ const AdmissionForm = () => {
                   <input
                     type="text"
                     {...register("phone", { required: "Number is required" })}
-                    id="subject"
+                    id="phone"
                     className={`mt-1 p-2 w-full rounded-md border ${
                       errors.phone ? "border-red-500" : "border-gray-300"
                     } focus:ring-blue-500 focus:border-blue-500`}
@@ -137,27 +137,6 @@ const AdmissionForm = () => {
                     </p>
                   )}
                 </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="subject"
-                  className=" text-sm font-medium text-gray-700"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  {...register("subject", { required: "Subject is required" })}
-                  id="subject"
-                  className={`mt-1 p-2  w-full rounded-md border ${
-                    errors.subject ? "border-red-500" : "border-gray-300"
-                  } focus:ring-blue-500 focus:border-blue-500`}
-                />
-                {errors.subject && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.subject.message}
-                  </p>
-                )}
               </div>
               <div className="flex items-center gap-2">
                 <div>
